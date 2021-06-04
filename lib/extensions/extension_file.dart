@@ -63,4 +63,8 @@ extension StringExtension on String {
   bool isDigit() {
     return double.tryParse(this) != null;
   }
+
+  bool isInteger(){
+    return int.tryParse(this) != null;
+  }
 }
