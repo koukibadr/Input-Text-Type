@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: Container(
+          color: Colors.black,
           width: double.infinity,
           child: Center(
             child: Container(
@@ -25,6 +26,10 @@ class MyApp extends StatelessWidget {
                 textField: TextField(
                   controller: TextEditingController(),
                   decoration: InputDecoration(hintText: "Enter Your name"),
+                  keyboardType: TextInputType.number,
+                  style: TextStyle(
+                    color: Colors.white
+                  ),
                 ),
               ),
             ),
