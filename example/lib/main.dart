@@ -17,16 +17,16 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: Container(
-          color: Colors.black,
+          color: Colors.grey,
           width: double.infinity,
           child: Center(
             child: Container(
               width: 200,
-              child: MaterialTextField.datetime(
+              child: MaterialTextField.phone(
                 textField: TextField(
                   controller: TextEditingController(),
                   decoration: InputDecoration(hintText: "Enter Your name"),
-                  keyboardType: TextInputType.datetime,
+                  keyboardType: TextInputType.phone,
                   style: TextStyle(
                     color: Colors.white
                   ),

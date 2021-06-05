@@ -52,6 +52,19 @@ class MaterialTextField extends StatelessWidget {
             : textField.controller);
   }
 
+  MaterialTextField.phone({required this.textField}) {
+    if (textField.controller == null) {
+      this.controller = TextEditingController();
+    } else {
+      this.controller = textField.controller;
+    }
+    this.randeredTextField = textField.clone(
+        onChanged: phoneValidation,
+        controller: textField.controller == null
+            ? this.controller
+            : textField.controller);
+  }
+
   @override
   Widget build(BuildContext context) {
     return randeredTextField;
@@ -80,6 +93,16 @@ class MaterialTextField extends StatelessWidget {
     String textValue = text.characters.where((element) {
       return (element.toString().isDigit() ||
           DATETIME_SPECIAL_CHARACTERS.contains(element));
+    }).toString();
+    if (textValue.isEmpty || text.length != textValue.length) {
+      _updateTextField(textValue);
+    }
+  }
+
+  phoneValidation(String text) {
+    String textValue = text.characters.where((element) {
+      return (element.toString().isDigit() ||
+          PHONE_SPECIAL_CHARACTERS.contains(element));
     }).toString();
     if (textValue.isEmpty || text.length != textValue.length) {
       _updateTextField(textValue);
