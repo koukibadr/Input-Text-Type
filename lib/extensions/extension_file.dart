@@ -6,7 +6,7 @@ extension TextFieldExtensions on TextField {
       {Function(String)? onChanged, TextEditingController? controller}) {
     return TextField(
       key: this.key,
-      controller: controller,
+      controller: controller ?? this.controller,
       focusNode: this.focusNode,
       decoration: this.decoration,
       keyboardType: this.keyboardType,
@@ -33,7 +33,7 @@ extension TextFieldExtensions on TextField {
       maxLength: this.maxLength,
       maxLengthEnforced: this.maxLengthEnforced,
       maxLengthEnforcement: this.maxLengthEnforcement,
-      onChanged: onChanged,
+      onChanged: onChanged ?? this.onChanged,
       onEditingComplete: this.onEditingComplete,
       onSubmitted: this.onSubmitted,
       onAppPrivateCommand: this.onAppPrivateCommand,
@@ -66,7 +66,7 @@ extension CupertinoTextFieldExtension on CupertinoTextField {
       {Function(String)? onChanged, TextEditingController? controller}) {
     return CupertinoTextField(
       key: this.key,
-      controller: controller,
+      controller: controller ?? this.controller,
       focusNode: this.focusNode,
       decoration: this.decoration,
       padding: this.padding,
@@ -98,7 +98,7 @@ extension CupertinoTextFieldExtension on CupertinoTextField {
       maxLength: this.maxLength,
       maxLengthEnforced: this.maxLengthEnforced,
       maxLengthEnforcement: this.maxLengthEnforcement,
-      onChanged: onChanged,
+      onChanged: onChanged ?? this.onChanged,
       onEditingComplete: this.onEditingComplete,
       onSubmitted: this.onSubmitted,
       inputFormatters: this.inputFormatters,
@@ -126,9 +126,5 @@ extension CupertinoTextFieldExtension on CupertinoTextField {
 extension StringExtension on String {
   bool isDigit() {
     return double.tryParse(this) != null;
-  }
-
-  bool isInteger() {
-    return int.tryParse(this) != null;
   }
 }
