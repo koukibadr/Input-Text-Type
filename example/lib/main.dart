@@ -22,11 +22,10 @@ class MyApp extends StatelessWidget {
           child: Center(
             child: Container(
               width: 200,
-              child: MaterialTextField.phone(
+              child: MaterialTextField.number(
                 textField: TextField(
                   controller: TextEditingController(),
                   decoration: InputDecoration(hintText: "Enter Your name"),
-                  keyboardType: TextInputType.phone,
                   style: TextStyle(
                     color: Colors.white
                   ),
