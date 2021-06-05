@@ -15,13 +15,15 @@ class MaterialTextType extends InputTypeField {
 
   MaterialTextType.number({required this.textField}) {
     specialCharacters = DIGIT_SPECIAL_CHARACTERS;
+    defaultOnChange = textField.onChanged;
+
     if (textField.controller == null) {
       this.controller = TextEditingController();
     } else {
       this.controller = textField.controller;
     }
     this.randeredTextField = textField.clone(
-        onChanged: textValidation,
+        onChanged: onTextChanged,
         controller: textField.controller == null
             ? this.controller
             : textField.controller);
@@ -29,13 +31,15 @@ class MaterialTextType extends InputTypeField {
 
   MaterialTextType.integer({required this.textField}) {
     specialCharacters = null;
+    defaultOnChange = textField.onChanged;
+
     if (textField.controller == null) {
       this.controller = TextEditingController();
     } else {
       this.controller = textField.controller;
     }
     this.randeredTextField = textField.clone(
-        onChanged: textValidation,
+        onChanged: onTextChanged,
         controller: textField.controller == null
             ? this.controller
             : textField.controller);
@@ -43,13 +47,15 @@ class MaterialTextType extends InputTypeField {
 
   MaterialTextType.datetime({required this.textField}) {
     specialCharacters = DATETIME_SPECIAL_CHARACTERS;
+    defaultOnChange = textField.onChanged;
+
     if (textField.controller == null) {
       this.controller = TextEditingController();
     } else {
       this.controller = textField.controller;
     }
     this.randeredTextField = textField.clone(
-        onChanged: textValidation,
+        onChanged: onTextChanged,
         controller: textField.controller == null
             ? this.controller
             : textField.controller);
@@ -57,13 +63,15 @@ class MaterialTextType extends InputTypeField {
 
   MaterialTextType.phone({required this.textField}) {
     specialCharacters = PHONE_SPECIAL_CHARACTERS;
+    defaultOnChange = textField.onChanged;
+
     if (textField.controller == null) {
       this.controller = TextEditingController();
     } else {
       this.controller = textField.controller;
     }
     this.randeredTextField = textField.clone(
-        onChanged: textValidation,
+        onChanged: onTextChanged,
         controller: textField.controller == null
             ? this.controller
             : textField.controller);

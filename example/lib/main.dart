@@ -58,6 +58,9 @@ class MaterialFormExample extends StatelessWidget {
             child: MaterialTextType.integer(
                 textField: TextField(
               decoration: InputDecoration(hintText: "Age"),
+              onChanged: (value) {
+                print(value);
+              },
             )),
           ),
           SizedBox(

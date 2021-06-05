@@ -17,13 +17,15 @@ class CupertinoTextType extends InputTypeField {
 
   CupertinoTextType.number({required this.cupertinoTextField}) {
     specialCharacters = DIGIT_SPECIAL_CHARACTERS;
+    defaultOnChange = cupertinoTextField.onChanged;
+
     if (cupertinoTextField.controller == null) {
       this.controller = TextEditingController();
     } else {
       this.controller = cupertinoTextField.controller;
     }
     this.renderedCupertinoField = cupertinoTextField.clone(
-        onChanged: textValidation,
+        onChanged: onTextChanged,
         controller: cupertinoTextField.controller == null
             ? this.controller
             : cupertinoTextField.controller);
@@ -31,13 +33,15 @@ class CupertinoTextType extends InputTypeField {
 
   CupertinoTextType.integer({required this.cupertinoTextField}) {
     specialCharacters = null;
+    defaultOnChange = cupertinoTextField.onChanged;
+
     if (cupertinoTextField.controller == null) {
       this.controller = TextEditingController();
     } else {
       this.controller = cupertinoTextField.controller;
     }
     this.renderedCupertinoField = cupertinoTextField.clone(
-        onChanged: textValidation,
+        onChanged: onTextChanged,
         controller: cupertinoTextField.controller == null
             ? this.controller
             : cupertinoTextField.controller);
@@ -45,13 +49,15 @@ class CupertinoTextType extends InputTypeField {
 
   CupertinoTextType.datetime({required this.cupertinoTextField}) {
     specialCharacters = DATETIME_SPECIAL_CHARACTERS;
+    defaultOnChange = cupertinoTextField.onChanged;
+
     if (cupertinoTextField.controller == null) {
       this.controller = TextEditingController();
     } else {
       this.controller = cupertinoTextField.controller;
     }
     this.renderedCupertinoField = cupertinoTextField.clone(
-        onChanged: textValidation,
+        onChanged: onTextChanged,
         controller: cupertinoTextField.controller == null
             ? this.controller
             : cupertinoTextField.controller);
@@ -59,13 +65,15 @@ class CupertinoTextType extends InputTypeField {
 
   CupertinoTextType.phone({required this.cupertinoTextField}) {
     specialCharacters = PHONE_SPECIAL_CHARACTERS;
+    defaultOnChange = cupertinoTextField.onChanged;
+
     if (cupertinoTextField.controller == null) {
       this.controller = TextEditingController();
     } else {
       this.controller = cupertinoTextField.controller;
     }
     this.renderedCupertinoField = cupertinoTextField.clone(
-        onChanged: textValidation,
+        onChanged: onTextChanged,
         controller: cupertinoTextField.controller == null
             ? this.controller
             : cupertinoTextField.controller);
