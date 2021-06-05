@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:web_input_type/widgets/material_input_text.dart';
+import 'package:web_input_type/widgets/material_text_type.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,13 +22,11 @@ class MyApp extends StatelessWidget {
           child: Center(
             child: Container(
               width: 200,
-              child: MaterialTextField.number(
+              child: MaterialTextType.number(
                 textField: TextField(
                   controller: TextEditingController(),
                   decoration: InputDecoration(hintText: "Enter Your name"),
-                  style: TextStyle(
-                    color: Colors.white
-                  ),
+                  style: TextStyle(color: Colors.white),
                 ),
               ),
             ),

@@ -3,19 +3,19 @@ import 'package:web_input_type/extensions/extension_file.dart';
 import 'package:web_input_type/validators/validators_constants.dart';
 
 // ignore: must_be_immutable
-class MaterialTextField extends StatelessWidget {
+class MaterialTextType extends StatelessWidget {
   final TextField textField;
 
   late TextField randeredTextField;
   late TextEditingController? controller;
   late List<String>? specialCharacters;
 
-  MaterialTextField({required this.textField}) {
+  MaterialTextType({required this.textField}) {
     this.randeredTextField = textField.clone();
     this.controller = this.randeredTextField.controller;
   }
 
-  MaterialTextField.number({required this.textField}) {
+  MaterialTextType.number({required this.textField}) {
     specialCharacters = DIGIT_SPECIAL_CHARACTERS;
     if (textField.controller == null) {
       this.controller = TextEditingController();
@@ -29,7 +29,7 @@ class MaterialTextField extends StatelessWidget {
             : textField.controller);
   }
 
-  MaterialTextField.integer({required this.textField}) {
+  MaterialTextType.integer({required this.textField}) {
     if (textField.controller == null) {
       this.controller = TextEditingController();
     } else {
@@ -42,7 +42,7 @@ class MaterialTextField extends StatelessWidget {
             : textField.controller);
   }
 
-  MaterialTextField.datetime({required this.textField}) {
+  MaterialTextType.datetime({required this.textField}) {
     specialCharacters = DATETIME_SPECIAL_CHARACTERS;
     if (textField.controller == null) {
       this.controller = TextEditingController();
@@ -56,7 +56,7 @@ class MaterialTextField extends StatelessWidget {
             : textField.controller);
   }
 
-  MaterialTextField.phone({required this.textField}) {
+  MaterialTextType.phone({required this.textField}) {
     specialCharacters = PHONE_SPECIAL_CHARACTERS;
     if (textField.controller == null) {
       this.controller = TextEditingController();
