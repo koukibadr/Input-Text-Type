@@ -30,6 +30,7 @@ class CupertinoTextType extends InputTypeField {
   }
 
   CupertinoTextType.integer({required this.cupertinoTextField}) {
+    specialCharacters = null;
     if (cupertinoTextField.controller == null) {
       this.controller = TextEditingController();
     } else {

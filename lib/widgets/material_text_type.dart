@@ -28,6 +28,7 @@ class MaterialTextType extends InputTypeField {
   }
 
   MaterialTextType.integer({required this.textField}) {
+    specialCharacters = null;
     if (textField.controller == null) {
       this.controller = TextEditingController();
     } else {

@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Text Field Type Package',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -28,6 +28,7 @@ class MaterialFormExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: MediaQuery.of(context).size.width,
       color: Colors.white,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -39,12 +40,18 @@ class MaterialFormExample extends StatelessWidget {
               decoration: InputDecoration(hintText: "Name & lastname"),
             )),
           ),
+          SizedBox(
+            height: 20,
+          ),
           Container(
             width: 200,
             child: MaterialTextType(
                 textField: TextField(
-              decoration: InputDecoration(hintText: "Adresse"),
+              decoration: InputDecoration(hintText: "Adress"),
             )),
+          ),
+          SizedBox(
+            height: 20,
           ),
           Container(
             width: 200,
@@ -53,12 +60,18 @@ class MaterialFormExample extends StatelessWidget {
               decoration: InputDecoration(hintText: "Age"),
             )),
           ),
+          SizedBox(
+            height: 20,
+          ),
           Container(
             width: 200,
             child: MaterialTextType.datetime(
                 textField: TextField(
               decoration: InputDecoration(hintText: "Birthday"),
             )),
+          ),
+          SizedBox(
+            height: 20,
           ),
           Container(
             width: 200,
@@ -77,6 +90,7 @@ class CupertinoFormExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: MediaQuery.of(context).size.width,
       color: Colors.white,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -88,6 +102,9 @@ class CupertinoFormExample extends StatelessWidget {
               placeholder: "Product Name",
             )),
           ),
+          SizedBox(
+            height: 20,
+          ),
           Container(
             width: 200,
             child: CupertinoTextType.number(
@@ -95,12 +112,18 @@ class CupertinoFormExample extends StatelessWidget {
               placeholder: "Product Price",
             )),
           ),
+          SizedBox(
+            height: 20,
+          ),
           Container(
             width: 200,
             child: CupertinoTextType.datetime(
                 cupertinoTextField: CupertinoTextField(
               placeholder: "Product Date",
             )),
+          ),
+          SizedBox(
+            height: 20,
           ),
           Container(
             width: 200,
