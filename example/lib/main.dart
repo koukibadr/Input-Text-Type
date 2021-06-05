@@ -1,5 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:web_input_type/widgets/cupertino_text_type.dart';
 import 'package:web_input_type/widgets/material_text_type.dart';
 
 void main() {
@@ -7,7 +8,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,22 +16,100 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        body: Container(
-          color: Colors.grey,
-          width: double.infinity,
-          child: Center(
-            child: Container(
-              width: 200,
-              child: MaterialTextType.number(
+        body: MaterialFormExample(),
+      ),
+    );
+  }
+}
+
+class MaterialFormExample extends StatelessWidget {
+  const MaterialFormExample({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 200,
+            child: MaterialTextType(
                 textField: TextField(
-                  controller: TextEditingController(),
-                  decoration: InputDecoration(hintText: "Enter Your name"),
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
+              decoration: InputDecoration(hintText: "Name & lastname"),
+            )),
           ),
-        ),
+          Container(
+            width: 200,
+            child: MaterialTextType(
+                textField: TextField(
+              decoration: InputDecoration(hintText: "Adresse"),
+            )),
+          ),
+          Container(
+            width: 200,
+            child: MaterialTextType.integer(
+                textField: TextField(
+              decoration: InputDecoration(hintText: "Age"),
+            )),
+          ),
+          Container(
+            width: 200,
+            child: MaterialTextType.datetime(
+                textField: TextField(
+              decoration: InputDecoration(hintText: "Birthday"),
+            )),
+          ),
+          Container(
+            width: 200,
+            child: MaterialTextType.phone(
+                textField: TextField(
+              decoration: InputDecoration(hintText: "Phone number"),
+            )),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class CupertinoFormExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 200,
+            child: CupertinoTextType(
+                cupertinoTextField: CupertinoTextField(
+              placeholder: "Product Name",
+            )),
+          ),
+          Container(
+            width: 200,
+            child: CupertinoTextType.number(
+                cupertinoTextField: CupertinoTextField(
+              placeholder: "Product Price",
+            )),
+          ),
+          Container(
+            width: 200,
+            child: CupertinoTextType.datetime(
+                cupertinoTextField: CupertinoTextField(
+              placeholder: "Product Date",
+            )),
+          ),
+          Container(
+            width: 200,
+            child: CupertinoTextType.phone(
+                cupertinoTextField: CupertinoTextField(
+              placeholder: "Phone number",
+            )),
+          ),
+        ],
       ),
     );
   }

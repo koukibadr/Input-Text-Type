@@ -2,17 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:web_input_type/extensions/extension_file.dart';
 import 'package:web_input_type/validators/validators_constants.dart';
 
-// ignore: must_be_immutable
-class MaterialTextType extends StatelessWidget {
-  final TextField textField;
+import 'text_input_type.dart';
 
+// ignore: must_be_immutable
+class MaterialTextType extends InputTypeField {
+  final TextField textField;
   late TextField randeredTextField;
-  late TextEditingController? controller;
-  late List<String>? specialCharacters;
 
   MaterialTextType({required this.textField}) {
-    this.randeredTextField = textField.clone();
-    this.controller = this.randeredTextField.controller;
+    this.randeredTextField = textField.clone(controller: textField.controller);
   }
 
   MaterialTextType.number({required this.textField}) {
@@ -73,22 +71,5 @@ class MaterialTextType extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return randeredTextField;
-  }
-
-  textValidation(String text) {
-    String textValue = text.characters.where((element) {
-      return (element.toString().isDigit() ||
-          (this.specialCharacters != null &&
-              this.specialCharacters!.contains(element)));
-    }).toString();
-    if (textValue.isEmpty || text.length != textValue.length) {
-      _updateTextField(textValue);
-    }
-  }
-
-  _updateTextField(textValue) {
-    this.controller?.text = textValue;
-    this.controller?.selection = TextSelection.fromPosition(
-        TextPosition(offset: this.controller?.text.length ?? 0));
   }
 }
