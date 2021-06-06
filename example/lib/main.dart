@@ -23,8 +23,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MaterialFormExample extends StatelessWidget {
-  const MaterialFormExample({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(

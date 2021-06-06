@@ -1,8 +1,7 @@
 name: input_type_field
 description: A multi platform input type. With current keyboard type parameter input fields will force you to enter only digits (for example) but this is not the case when executing your code on the web or on desktop apps. This is the main purpose of this package is to help developers set input fields easily and across all platforms.
-version: 0.0.1
-author:
-homepage:
+version: 1.0.0
+homepage: https://github.com/koukibadr/Input-Text-Type
 
 environment:
   sdk: '>=2.12.0 <3.0.0'

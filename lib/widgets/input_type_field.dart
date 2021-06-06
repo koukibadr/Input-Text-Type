@@ -9,9 +9,8 @@ import 'package:input_type_field/widgets/material_text_type.dart';
 ///
 // ignore: must_be_immutable
 abstract class InputTypeField extends StatelessWidget {
-
   /// controller used to update the value of the input field,
-  /// will have reference to the passed controller else if no text controller is passed 
+  /// will have reference to the passed controller else if no text controller is passed
   /// it will contain a new instance of [TextEditingController]
   ///
   late TextEditingController? controller;
@@ -24,12 +23,11 @@ abstract class InputTypeField extends StatelessWidget {
   /// will be called after validating the input based on the input type.
   late Function(String)? defaultOnChange;
 
-
   /// the function that will be called in the field creation
   /// runs the text validation and based on the result it calls [defaultOnChange]
-  /// 
+  ///
   ///[text] the input text that will be validated
-  /// 
+  ///
   onTextChanged(String text) {
     _textValidation(text).then((value) {
       if (value.isNotEmpty) {
@@ -38,12 +36,11 @@ abstract class InputTypeField extends StatelessWidget {
     });
   }
 
-
   /// runs the input validation based on the input type and [specialCharacters]
   /// return a Future contains the string result of the validation.
-  /// 
+  ///
   /// [text] the input text that will be validated
-  /// 
+  ///
   Future<String> _textValidation(String text) async {
     String textValue = text.characters.where((element) {
       return (element.toString().isDigit() ||
@@ -58,10 +55,9 @@ abstract class InputTypeField extends StatelessWidget {
     }
   }
 
-
   /// update the input text with the new value after validation
   /// it updates [controller] with the new text.
-  /// 
+  ///
   /// [textValue] the text result after validation.
   void _updateTextField(textValue) {
     this.controller?.text = textValue;
