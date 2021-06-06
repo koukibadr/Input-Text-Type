@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:web_input_type/extensions/extension_file.dart';
 import 'package:web_input_type/validators/validators_constants.dart';
 
-import 'text_input_type.dart';
+import 'input_type_field.dart';
 
 ///creates a [CupertinoTextField] clone widget based on a given [CupertinoTextField] and
 ///based on the type selected { number, integer, datetime, phone }.
