@@ -1,8 +1,8 @@
-name: web_input_type
+name: input_type_field
 description: A new Flutter package project.
 version: 0.0.1
 author:
-homepage: https://github.com/koukibadr/Input-Text-Type
+homepage:
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
@@ -15,5 +15,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
 flutter:

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:web_input_type/extensions/extension_file.dart';
-import 'package:web_input_type/widgets/cupertino_text_type.dart';
-import 'package:web_input_type/widgets/material_text_type.dart';
+import 'package:input_type_field/extensions/extension_file.dart';
+import 'package:input_type_field/widgets/cupertino_text_type.dart';
+import 'package:input_type_field/widgets/material_text_type.dart';
 
 /// class implementing the validations functions.
 /// herited by [MaterialTextType] and [CupertinoTextType] and each of them is

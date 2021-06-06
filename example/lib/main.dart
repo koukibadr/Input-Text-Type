@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:web_input_type/widgets/cupertino_text_type.dart';
-import 'package:web_input_type/widgets/material_text_type.dart';
+import 'package:input_type_field/widgets/cupertino_text_type.dart';
+import 'package:input_type_field/widgets/material_text_type.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MaterialFormExample extends StatelessWidget {
-  const MaterialFormExample({Key key}) : super(key: key);
+  const MaterialFormExample({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

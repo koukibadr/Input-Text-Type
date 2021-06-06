@@ -1,3 +1,11 @@
-## [0.0.1] - TODO: Add release date.
+##  [0.0.1] - 06/06/2021.
 
-* TODO: Describe initial release.
+  
+
+* Support both Material and Cupertino text fields.
+* Support multiple input types 
+	* float numbers
+	* integers
+	* datetime
+	* phone number
+* Support all platforms (mobile, web, Windows...)

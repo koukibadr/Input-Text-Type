@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:web_input_type/extensions/extension_file.dart';
-import 'package:web_input_type/validators/validators_constants.dart';
+import 'package:input_type_field/extensions/extension_file.dart';
+import 'package:input_type_field/validators/validators_constants.dart';
 
 import 'input_type_field.dart';
 
@@ -40,10 +40,9 @@ class CupertinoTextType extends InputTypeField {
     if (cupertinoTextField.controller == null) {
       this.controller = TextEditingController();
     }
-    
+
     this.renderedCupertinoField = cupertinoTextField.clone(
-        onChanged: onTextChanged,
-        controller: this.controller);
+        onChanged: onTextChanged, controller: this.controller);
   }
 
   /// creates a clone of the given [cupertinoTextField] with integer validation input
@@ -61,8 +60,7 @@ class CupertinoTextType extends InputTypeField {
     }
 
     this.renderedCupertinoField = cupertinoTextField.clone(
-        onChanged: onTextChanged,
-        controller: this.controller);
+        onChanged: onTextChanged, controller: this.controller);
   }
 
   /// creates a clone of the given [cupertinoTextField] with datetime validation input
@@ -78,10 +76,9 @@ class CupertinoTextType extends InputTypeField {
     if (cupertinoTextField.controller == null) {
       this.controller = TextEditingController();
     }
-    
+
     this.renderedCupertinoField = cupertinoTextField.clone(
-        onChanged: onTextChanged,
-        controller: this.controller);
+        onChanged: onTextChanged, controller: this.controller);
   }
 
   /// creates a clone of the given [cupertinoTextField] with phone validation input
@@ -97,10 +94,9 @@ class CupertinoTextType extends InputTypeField {
     if (cupertinoTextField.controller == null) {
       this.controller = TextEditingController();
     }
-    
+
     this.renderedCupertinoField = cupertinoTextField.clone(
-        onChanged: onTextChanged,
-        controller: this.controller);
+        onChanged: onTextChanged, controller: this.controller);
   }
 
   @override
